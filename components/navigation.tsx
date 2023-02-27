@@ -4,7 +4,7 @@ export default function Navigation() {
   return (
     <>
       <nav>
-        <ul>
+        <ul className="flex  w-screen">
           <li>
             <Link href="/">Home</Link>
           </li>
