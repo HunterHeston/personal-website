@@ -7,7 +7,7 @@ const nextConfig = {
       {
         protocol: "https",
         hostname: "placehold.co",
-        pathname: "/*",
+        pathname: "/**",
         port: "",
       },
     ],
