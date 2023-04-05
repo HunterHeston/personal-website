@@ -12,7 +12,8 @@ export default function Layout({ children }: LayoutProps) {
   return (
     <div
       className={
-        "dark:bg-background dark:text-primary min-h-screen " + inter.className
+        "px-4 py-7 dark:bg-background dark:text-primary min-h-screen " +
+        inter.className
       }
     >
       <Head>
@@ -22,12 +23,11 @@ export default function Layout({ children }: LayoutProps) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       {/* column container */}
-      <div
-        id="application"
-        className="pl-7 pt-7 flex flex-col sm:flex-row max-w-full"
-      >
+      <div id="application" className="flex flex-col sm:flex-row max-w-full">
         <Navigation />
-        <div id="page-content">{children}</div>
+        <div className="pl-3" id="page-content">
+          {children}
+        </div>
       </div>
     </div>
   );
