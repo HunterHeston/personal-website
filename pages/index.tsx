@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function Home() {
   return (
     <>
-      <main className="w-screen text-center">
+      <main className="text-center">
         <h1 className="text-3xl font-semibold text-accent">Hunter Heston</h1>
         <h2>Software Engineer. Web Developer. Small Business Owner</h2>
         <Image
