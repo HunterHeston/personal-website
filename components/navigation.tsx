@@ -6,8 +6,8 @@ export default function Navigation() {
 
   return (
     <>
-      <nav className="flex flex-col min-h">
-        <Link href="/" className="mx-7 my-5 text-4xl font-extrabold">
+      <nav className="flex flex-col">
+        <Link href="/" className="mt-5 text-4xl font-extrabold sm:mb-4">
           H
         </Link>
         <ul className="flex sm:flex-col">
@@ -38,10 +38,10 @@ type NavItemProps = {
 
 // a single navigation item
 function NavItem({ text, href, active, className }: NavItemProps) {
-  const activeClass = active ? "text-accent" : "text-primary";
+  const activeClass = active ? "text-accent" : "";
 
   return (
-    <li className={["mx-7 my-5 list-none", activeClass, className].join(" ")}>
+    <li className={["my-4  list-none pr-5", activeClass, className].join(" ")}>
       <Link className="hover:underline hover:text-accent text-xl" href={href}>
         {text}
       </Link>
