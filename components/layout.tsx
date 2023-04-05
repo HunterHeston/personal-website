@@ -25,7 +25,7 @@ export default function Layout({ children }: LayoutProps) {
       {/* column container */}
       <div id="application" className="flex flex-col sm:flex-row max-w-full">
         <Navigation />
-        <div className="pl-3" id="page-content">
+        <div className="px-3" id="page-content">
           {children}
         </div>
       </div>
