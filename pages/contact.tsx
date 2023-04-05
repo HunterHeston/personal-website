@@ -1,7 +1,9 @@
+import H1 from "@/components/h1";
+
 export default function Contact() {
   return (
     <>
-      <h1>Contact</h1>
+      <H1>Contact</H1>
       <form action="submit">
         <label htmlFor="name">Name</label>
         <input type="text" name="name" id="name" />

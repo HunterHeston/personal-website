@@ -1,7 +1,9 @@
+import H1 from "@/components/h1";
+
 export default function Blog() {
   return (
     <>
-      <h1>Blog</h1>
+      <H1>Blog</H1>
       <p>Subscribe to get emails whenever a new post goes out!</p>
       <form action="submit">
         <label htmlFor="email">Email</label>

@@ -1,3 +1,5 @@
+import H2 from "@/components/H2";
+import H1 from "@/components/h1";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -5,18 +7,19 @@ export default function Home() {
   return (
     <>
       <main>
-        <h1 className="text-3xl font-semibold text-accent">Hunter Heston</h1>
+        <H1>Hunter Heston</H1>
         <h2>Software Engineer. Web Developer. Small Business Owner</h2>
         <Image
+          className="rounded-full"
           alt="hunter heston's head shot"
           src="/hunterheston.jpeg"
-          width={250}
-          height={250}
+          width={100}
+          height={100}
         />
       </main>
       <hr />
       <section>
-        <h2>About Me</h2>
+        <H2>About Me</H2>
         <p>
           Hey! I&apos;m Hunter, a software engineer and small business owner
           living in San Francisco.
@@ -34,7 +37,7 @@ export default function Home() {
       </section>
       <hr />
       <section>
-        <h2>Work</h2>
+        <H2>Work</H2>
         <div>
           <Image
             alt="screenshot of project 1"
@@ -71,7 +74,7 @@ export default function Home() {
       </section>
       <hr />
       <section>
-        <h2>Contact</h2>
+        <H2>Contact</H2>
         <form action="submit">
           <label htmlFor="name">Name</label>
           <input type="text" name="name" id="name" />
@@ -84,7 +87,7 @@ export default function Home() {
       </section>
       <hr />
       <section>
-        <h2>Join My Newsletter</h2>
+        <H2>Join My Newsletter</H2>
         <form action="submit">
           <label htmlFor="email">Email</label>
           <input type="email" name="email" id="email" />
