@@ -7,7 +7,9 @@ export default function Navigation() {
   return (
     <>
       <nav className="flex flex-col min-h">
-        <NavItem text="H" href="/" active={router.pathname === "/"} />
+        <Link href="/" className="mx-7 my-5 text-4xl font-extrabold">
+          H
+        </Link>
         <ul className="flex sm:flex-col">
           <NavItem text="Home" href="/" active={router.pathname === "/"} />
           <NavItem
@@ -31,14 +33,15 @@ type NavItemProps = {
   text: string;
   href: string;
   active: boolean;
+  className?: string;
 };
 
 // a single navigation item
-function NavItem({ text, href, active }: NavItemProps) {
+function NavItem({ text, href, active, className }: NavItemProps) {
   const activeClass = active ? "text-accent" : "text-primary";
 
   return (
-    <li className={"mx-7 my-5 list-none " + activeClass}>
+    <li className={["mx-7 my-5 list-none", activeClass, className].join(" ")}>
       <Link className="hover:underline hover:text-accent text-xl" href={href}>
         {text}
       </Link>
