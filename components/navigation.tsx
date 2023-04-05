@@ -38,16 +38,17 @@ type NavItemProps = {
 
 // a single navigation item
 function NavItem({ text, href, active, className }: NavItemProps) {
-  const activeClass = active
-    ? "border border-solid border-white rounded-lg"
-    : "";
+  const activeClass = active ? "bg-darker text-primary" : "";
 
   return (
-    <li className={["w-fit px-3 py-2", activeClass, className].join(" ")}>
-      <Link
-        className="hover:underline hover:text-accent text-md sm:text-xl"
-        href={href}
-      >
+    <li
+      className={[
+        "transition-all text-primaryFaded hover:text-primary w-fit px-3 py-2 mb-2 rounded-lg",
+        activeClass,
+        className,
+      ].join(" ")}
+    >
+      <Link className="text-md sm:text-xl" href={href}>
         {text}
       </Link>
     </li>
