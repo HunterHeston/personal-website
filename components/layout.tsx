@@ -12,7 +12,7 @@ export default function Layout({ children }: LayoutProps) {
   return (
     <div
       className={
-        "px-4 py-7 dark:bg-background dark:text-primary min-h-screen " +
+        "px-4 py-7 flex flex-col items-center justify-between dark:bg-background dark:text-primary min-h-screen " +
         inter.className
       }
     >
@@ -23,12 +23,16 @@ export default function Layout({ children }: LayoutProps) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       {/* column container */}
-      <div id="application" className="flex flex-col sm:flex-row max-w-full">
+      <div
+        id="application"
+        className="flex flex-col sm:flex-row sm:w-2/3 sm:max-w-3xl"
+      >
         <Navigation />
-        <div className="px-3" id="page-content">
+        <main className="px-3" id="page-content">
           {children}
-        </div>
+        </main>
       </div>
+      <footer>Hunter Heston @{new Date().getFullYear()}</footer>
     </div>
   );
 }
