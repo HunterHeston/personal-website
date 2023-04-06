@@ -50,6 +50,9 @@ function NavItem({ text, href, active, className }: NavItemProps) {
 
   return (
     <li
+      // this inline style removes a small grey highlight that appears when you tap on a link on mobile
+      // https://stackoverflow.com/a/72323247
+      style={{ WebkitTapHighlightColor: "transparent" }}
       className={[
         "transition-all text-primaryFaded hover:text-primary w-fit px-3 py-2 mb-2 rounded-lg",
         activeClass,
