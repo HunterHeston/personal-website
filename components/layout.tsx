@@ -11,11 +11,11 @@ const inter = Inter({ subsets: ["latin"] });
 export default function Layout({ children }: LayoutProps) {
   return (
     <div
-      //  This inline style prevents the page from shifting when the scrollbar appears
-      // https://stackoverflow.com/a/30293718
-      style={{ paddingLeft: "calc(100vw - 100%);" }}
+      id="layout"
       className={
-        "px-4 py-7 flex flex-col items-center justify-between dark:bg-background dark:text-primary min-h-screen " +
+        // the `calc` function here prevents the page from shifting when scroll bars appear and disappear
+        // https://stackoverflow.com/a/30293718
+        "px-4 py-7 flex flex-col items-center justify-between sm:pl-[calc(100vw-100%)] dark:bg-background dark:text-primary min-h-screen " +
         inter.className
       }
     >
