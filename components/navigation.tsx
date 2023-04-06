@@ -7,7 +7,10 @@ export default function Navigation() {
   return (
     <>
       <nav className="flex flex-col mr-2">
-        <Link href="/" className="mt-5 ml-3 mb-4 text-4xl font-extrabold">
+        <Link
+          href="/"
+          className="leading-loose ml-3 mb-4 text-4xl font-extrabold"
+        >
           HH
         </Link>
         <ul className="flex sm:flex-col">
