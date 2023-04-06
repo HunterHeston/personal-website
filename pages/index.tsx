@@ -27,12 +27,13 @@ export default function Home() {
         </p>
         <p className="my-5 leading-relaxed">
           For the past 6 years I&apos;ve been building software at companies
-          like <span className="font-bold">Google and Lockheed Martin</span>.
+          like <span className="font-bold">Google</span> and{" "}
+          <span className="font-bold">Lockheed Martin</span>.
         </p>
         <p className="my-5 leading-relaxed">
           My strengths are{" "}
           <span className="font-bold">backend service development</span> in{" "}
-          <span className="font-bold">Go</span> and
+          <span className="font-bold">Go</span> and{" "}
           <span className="font-bold">NodeJS</span>. I&apos;m skilled at
           building <span className="font-bold">frontends</span> with{" "}
           <span className="font-bold">ReactJS</span> or vanilla{" "}
