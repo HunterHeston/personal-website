@@ -1,4 +1,4 @@
-import { Inter } from "@next/font/google";
+import { Inter, Open_Sans } from "@next/font/google";
 import Head from "next/head";
 import Navigation from "./navigation";
 
@@ -15,8 +15,10 @@ export default function Layout({ children }: LayoutProps) {
       className={
         // the `calc` function here prevents the page from shifting when scroll bars appear and disappear
         // https://stackoverflow.com/a/30293718
-        "px-4 py-7 flex flex-col items-center justify-between sm:pl-[calc(100vw-100%)] dark:bg-background dark:text-primary min-h-screen " +
-        inter.className
+        [
+          "px-4 py-7 flex flex-col items-center justify-between sm:pl-[calc(100vw-100%)]  min-h-screen",
+          inter.className,
+        ].join(" ")
       }
     >
       <Head>
