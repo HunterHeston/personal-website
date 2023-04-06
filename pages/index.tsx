@@ -5,17 +5,15 @@ import Image from "next/image";
 export default function Home() {
   return (
     <>
-      <main>
-        <H1>Hunter Heston</H1>
-        <h2>Software Engineer. Web Developer. Small Business Owner</h2>
-        <Image
-          className="rounded-full"
-          alt="hunter heston's head shot"
-          src="/hunterheston.jpeg"
-          width={100}
-          height={100}
-        />
-      </main>
+      <H1>Hunter Heston</H1>
+      <h2>Software Engineer. Web Developer. Small Business Owner</h2>
+      <Image
+        className="rounded-full"
+        alt="hunter heston's head shot"
+        src="/hunterheston.jpeg"
+        width={100}
+        height={100}
+      />
       <hr />
       <section>
         <H2>About Me</H2>
@@ -25,7 +23,7 @@ export default function Home() {
         </p>
         <p>
           For the past 6 years I&apos;ve been building software at companies
-          like Google and Lockheed Martin.
+          like Google and Lockheed Martin. Now I build software for clients!
         </p>
         <p>
           My strengths are backend service development in Go and NodeJS.
@@ -56,7 +54,6 @@ export default function Home() {
           <button type="submit">Subscribe</button>
         </form>
       </section>
-      <footer>Hunter Heston @{new Date().getFullYear()}</footer>
     </>
   );
 }
