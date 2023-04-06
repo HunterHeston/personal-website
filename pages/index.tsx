@@ -8,7 +8,7 @@ export default function Home() {
       <section>
         <H1>Hunter Heston</H1>
         <h2 className="leading-loose italic">
-          Software Engineer. Web Developer. Small Business Owner
+          Software Engineer. Web Developer. Small Business Owner.
         </h2>
         <Image
           className="rounded-full my-5"
