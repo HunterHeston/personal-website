@@ -9,7 +9,7 @@ export default function Contact() {
       <div>
         <Image
           alt="screenshot of project 1"
-          src="https://placehold.co/600x400"
+          src="/600x400.jpeg"
           width={600}
           height={400}
         />
@@ -20,7 +20,7 @@ export default function Contact() {
       <div>
         <Image
           alt="screenshot of project 2"
-          src="https://placehold.co/600x400"
+          src="/600x400.jpeg"
           width={600}
           height={400}
         />
@@ -31,7 +31,7 @@ export default function Contact() {
       <div>
         <Image
           alt="screenshot of project 3"
-          src="https://placehold.co/600x400"
+          src="/600x400.jpeg"
           width={600}
           height={400}
         />
