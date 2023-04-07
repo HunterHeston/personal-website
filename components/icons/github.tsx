@@ -1,10 +1,13 @@
-export default function GitHubIcon() {
+import IconProps from "./iconProps";
+
+export default function GitHubIcon({ className, size = 24 }: IconProps) {
   return (
     <svg
+      className={className}
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 24"
-      width="24"
-      height="24"
+      viewBox={`0 0 ${size} ${size}`}
+      width={size}
+      height={size}
     >
       <path
         fill="currentColor"
