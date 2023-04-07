@@ -33,7 +33,7 @@ export default function Layout({ children }: LayoutProps) {
         className="flex flex-col sm:flex-row sm:w-2/3 sm:max-w-3xl sm:pt-24"
       >
         <Navigation />
-        <main className="px-3" id="page-content">
+        <main className="px-3 w-full" id="page-content">
           {children}
         </main>
       </div>
