@@ -1,6 +1,7 @@
 import H2 from "@/components/h2";
 import H1 from "@/components/h1";
 import Image from "next/image";
+import P from "@/components/p";
 
 export default function Home() {
   return (
@@ -21,16 +22,16 @@ export default function Home() {
       {/* <hr /> */}
       <section>
         <H2>About Me</H2>
-        <p className="my-5 leading-relaxed">
+        <P>
           Hey! I&apos;m <span className="font-bold">Hunter</span>, a software
           engineer and small business owner living in San Francisco.
-        </p>
-        <p className="my-5 leading-relaxed">
+        </P>
+        <P>
           For the past 6 years I&apos;ve been building software at companies
           like <span className="font-bold">Google</span> and{" "}
           <span className="font-bold">Lockheed Martin</span>.
-        </p>
-        <p className="my-5 leading-relaxed">
+        </P>
+        <P>
           My strengths are{" "}
           <span className="font-bold">backend service development</span> in{" "}
           <span className="font-bold">Go</span> and{" "}
@@ -38,10 +39,8 @@ export default function Home() {
           building <span className="font-bold">frontends</span> with{" "}
           <span className="font-bold">ReactJS</span> or vanilla{" "}
           <span className="font-bold">HTML/CSS/JavaScript</span>.
-        </p>
-        <p className="my-5 leading-relaxed">
-          I am passionate about coding, writing and personal growth.
-        </p>
+        </P>
+        <P>I am passionate about coding, writing and personal growth.</P>
       </section>
     </>
   );

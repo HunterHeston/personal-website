@@ -1,4 +1,5 @@
 import H1 from "@/components/h1";
+import P from "@/components/p";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -6,6 +7,7 @@ export default function Contact() {
   return (
     <>
       <H1>Work</H1>
+      <P>An overview of some of the projects I&apos;ve worked on.</P>
       <div>
         <Image
           alt="screenshot of project 1"
