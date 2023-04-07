@@ -8,6 +8,9 @@ export default function Navigation() {
     <>
       <nav className="flex flex-col mr-2">
         <Link
+          // this inline style removes a small grey highlight that appears when you tap on a link on mobile
+          // https://stackoverflow.com/a/72323247
+          style={{ WebkitTapHighlightColor: "transparent" }}
           href="/"
           className="leading-loose ml-3 mb-4 text-4xl font-extrabold"
         >
