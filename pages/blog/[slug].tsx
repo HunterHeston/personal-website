@@ -1,4 +1,5 @@
 import H1 from "@/components/h1";
+import H2 from "@/components/h2";
 import { Blog, listBlogs, readBlog, readBlogBySlug } from "@/lib/blogs";
 import { GetStaticPaths, GetStaticProps } from "next";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
@@ -9,10 +10,33 @@ interface BlogProps {
 }
 
 export default function BlogPost({ blog }: BlogProps) {
-  console.log(blog);
   return (
     <>
-      <ReactMarkdown>{blog.content}</ReactMarkdown>
+      <ReactMarkdown
+        components={{
+          h1: ({ node, ...props }) => <H1 {...props} />,
+          h2: ({ node, ...props }) => <H2 {...props} />,
+          h3: ({ node, ...props }) => <h3 {...props} />,
+          h4: ({ node, ...props }) => <h4 {...props} />,
+          h5: ({ node, ...props }) => <h5 {...props} />,
+          h6: ({ node, ...props }) => <h6 {...props} />,
+          p: ({ node, ...props }) => <p {...props} />,
+          a: ({ node, ...props }) => <a {...props} />,
+          blockquote: ({ node, ...props }) => <blockquote {...props} />,
+          br: ({ node, ...props }) => <br {...props} />,
+          code: ({ node, ...props }) => <code {...props} />,
+          em: ({ node, ...props }) => <em {...props} />,
+          hr: ({ node, ...props }) => <hr {...props} />,
+          img: ({ node, ...props }) => <img {...props} />,
+          li: ({ node, ...props }) => <li {...props} />,
+          ol: ({ node, ...props }) => <ol {...props} />,
+          pre: ({ node, ...props }) => <pre {...props} />,
+          strong: ({ node, ...props }) => <strong {...props} />,
+          ul: ({ node, ...props }) => <ul {...props} />,
+        }}
+      >
+        {blog.content}
+      </ReactMarkdown>
     </>
   );
 }
