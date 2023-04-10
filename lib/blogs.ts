@@ -61,6 +61,24 @@ export async function readBlog(path: string): Promise<ReadBlog> {
 }
 
 /**
+ * Read a single blog file from the file system
+ * and parse it into a Blog object or Error.
+ * Assume that the slug is the filename and path information for the user.
+ * @param path Path to the blog
+ */
+export async function readBlogBySlug(slug: string): Promise<ReadBlog> {
+  let content: string;
+  const path = `${BLOG_DIR}/${slug}.md`;
+  try {
+    content = await fs.readFile(path, "utf-8");
+  } catch (err) {
+    return new Error(`Failed to read blog at ${path}: ${err}`);
+  }
+
+  return parseBlogContent(path, content);
+}
+
+/**
  *
  * @param path Path to the blog
  * @param content the string content of the blog file
