@@ -14,23 +14,48 @@ export default function BlogListing({ blogs }: BlogProps) {
   return (
     <>
       <H1>Blog</H1>
-      <p>Subscribe to get emails whenever a new post goes out!</p>
-      <form action="submit">
-        <label htmlFor="email">Email</label>
-        <input type="email" name="email" id="email" />
-        <button type="submit">Subscribe</button>
+      <p className="mb-5">
+        Sub and you&apos;ll get <span className="font-bold">one</span> email
+        when I publish a new blog post.
+      </p>
+      <form className="flex mb-10" action="submit">
+        <label htmlFor="email" hidden>
+          Email
+        </label>
+        <input
+          className="p-2 w-72 border-l border-t border-b rounded-l-md"
+          placeholder="email"
+          type="email"
+          name="email"
+          id="email"
+        />
+        <button
+          className="p-3 text-primary bg-background rounded-r-md hover:bg-darker"
+          type="submit"
+        >
+          Subscribe
+        </button>
       </form>
       <ul>
         {blogs.map((blog) => (
-          <li key={blog.title}>
-            <Link href={`/blog${blog.title}`}>{blog.title}</Link>
-            <p>
-              {blog.date} <span>{blog.readingTime} min read</span>
-            </p>
-          </li>
+          <BlogLi key={blog.title} {...blog} />
         ))}
       </ul>
     </>
+  );
+}
+
+function BlogLi(blog: Blog) {
+  return (
+    <li className="flex flex-col" key={blog.title}>
+      <Link className="text-xl" href={`/blog/${blog.slug}`}>
+        {blog.title}
+      </Link>
+      <p className="text-primaryFaded">
+        {blog.date}{" "}
+        <span className="ml-3 italic">{blog.readingTime} min read</span>
+      </p>
+    </li>
   );
 }
 
