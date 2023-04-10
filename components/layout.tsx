@@ -16,7 +16,7 @@ export default function Layout({ children }: LayoutProps) {
         // the `calc` function here prevents the page from shifting when scroll bars appear and disappear
         // https://stackoverflow.com/a/30293718
         [
-          "px-4 py-7 flex flex-col items-center justify-between sm:pl-[calc(100vw-100%)]  min-h-screen",
+          " min-h-screen px-4 py-7 flex flex-col justify-between sm:items-center sm:pl-[calc(100vw-100%)]",
           inter.className,
         ].join(" ")
       }
