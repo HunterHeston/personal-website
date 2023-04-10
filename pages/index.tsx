@@ -35,7 +35,7 @@ export default function Home() {
           My strengths are{" "}
           <span className="font-bold">backend service development</span> in{" "}
           <span className="font-bold">Go</span> and{" "}
-          <span className="font-bold">NodeJS</span>. I&apos;m skilled at
+          <span className="font-bold">NodeJS</span>. I&apos;m also skilled at
           building <span className="font-bold">frontends</span> with{" "}
           <span className="font-bold">ReactJS</span> or vanilla{" "}
           <span className="font-bold">HTML/CSS/JavaScript</span>.
