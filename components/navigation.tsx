@@ -26,7 +26,7 @@ export default function Navigation() {
           <NavItem
             text="blog"
             href="/blog"
-            active={router.pathname === "/blog"}
+            active={router.pathname.startsWith("/blog")}
           />
           <NavItem
             text="contact"
