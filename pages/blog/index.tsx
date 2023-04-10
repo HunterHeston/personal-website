@@ -8,9 +8,6 @@ interface BlogProps {
 }
 
 export default function BlogListing({ blogs }: BlogProps) {
-  for (const blog of blogs) {
-    console.log(blog);
-  }
   return (
     <>
       <H1>Blog</H1>
