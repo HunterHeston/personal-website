@@ -1,8 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import fs from "fs/promises";
-import { Blog, readBlog } from "@/lib/blogs";
-
-const BLOG_DIR = "./blogs";
+import { Blog, listBlogs } from "@/lib/blogs";
 
 type Data = {
   blogs?: Blog[];
@@ -13,20 +10,14 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
-  let blogs: Blog[] = [];
+  let blogs: Blog[] | Error = [];
   try {
-    const files = await fs.readdir(BLOG_DIR);
-
-    for (const file of files) {
-      const blog = await readBlog(`${BLOG_DIR}/${file}`);
-
-      if (blog instanceof Error) {
-        console.error(`Failed to read blog ${file}: ${blog}`);
-        return res.status(500).json({ error: "Failed to read a blog" });
-      }
-
-      blogs.push(blog);
+    const result = await listBlogs();
+    if (result instanceof Error) {
+      console.error(`Failed to list blogs: ${result}`);
+      return res.status(500).json({ error: "Failed to list all blogs" });
     }
+    blogs = result;
   } catch (err) {
     console.error(`Failed to list blogs: ${err}`);
     return res.status(500).json({ error: "Failed to list all blogs" });

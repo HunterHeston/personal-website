@@ -1,6 +1,7 @@
 import Blog from "@/pages/blog";
 import fs from "fs/promises";
 
+const BLOG_DIR = "./blogs";
 const WPM = 200;
 
 /**
@@ -13,6 +14,33 @@ export type Blog = {
   readingTime: number;
   content: string;
 };
+
+/**
+ * List all blog files from the file system
+ */
+type ListBlogs = Blog[] | Error;
+export async function listBlogs(): Promise<ListBlogs> {
+  let blogs: Blog[] = [];
+  try {
+    const files = await fs.readdir(BLOG_DIR);
+
+    for (const file of files) {
+      const blog = await readBlog(`${BLOG_DIR}/${file}`);
+
+      if (blog instanceof Error) {
+        console.error(`Failed to read blog ${file}: ${blog}`);
+        return new Error("Failed to read a blog");
+      }
+
+      blogs.push(blog);
+    }
+  } catch (err) {
+    console.error(`Failed to list blogs: ${err}`);
+    return new Error("Failed to list all blogs");
+  }
+
+  return blogs;
+}
 
 /**
  * Read a single blog file from the file system
