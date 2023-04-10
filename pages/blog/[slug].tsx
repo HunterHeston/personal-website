@@ -1,6 +1,7 @@
 import H1 from "@/components/h1";
 import { Blog, listBlogs, readBlog, readBlogBySlug } from "@/lib/blogs";
 import { GetStaticPaths, GetStaticProps } from "next";
+import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 
 // Blog Props
 interface BlogProps {
@@ -11,8 +12,7 @@ export default function BlogPost({ blog }: BlogProps) {
   console.log(blog);
   return (
     <>
-      <H1>{blog.title}</H1>
-      <p>{blog.content}</p>
+      <ReactMarkdown>{blog.content}</ReactMarkdown>
     </>
   );
 }
