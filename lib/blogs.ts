@@ -10,6 +10,7 @@ const WPM = 200;
 export type Blog = {
   path: string;
   title: string;
+  slug: string;
   date: string;
   readingTime: number;
   content: string;
@@ -84,6 +85,7 @@ function parseBlogContent(path: string, content: string): Blog | Error {
   return {
     path: path,
     title: title,
+    slug: title.toLowerCase().replaceAll(" ", "-"),
     date: date,
     readingTime: readingTime,
     content: content,
