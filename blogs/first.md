@@ -1,4 +1,4 @@
-# My First Post
+# First
 
 `2023-04-10`
 
