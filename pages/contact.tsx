@@ -45,7 +45,7 @@ export default function Contact() {
           />
         </label>
         <button
-          className="w-full p-4 mt-4 bg-background text-primary rounded-md"
+          className="w-full p-4 mt-4 bg-background dark:bg-darker text-primary rounded-md"
           type="submit"
         >
           Send
