@@ -1,8 +1,10 @@
 import H1 from "@/components/h1";
 import H2 from "@/components/h2";
-import { Blog, listBlogs, readBlog, readBlogBySlug } from "@/lib/blogs";
+import { Blog, listBlogs, readBlogBySlug } from "@/lib/blogs";
 import { GetStaticPaths, GetStaticProps } from "next";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { darcula } from "react-syntax-highlighter/dist/cjs/styles/prism";
 
 // Blog Props
 interface BlogProps {
@@ -24,7 +26,6 @@ export default function BlogPost({ blog }: BlogProps) {
           a: ({ node, ...props }) => <a {...props} />,
           blockquote: ({ node, ...props }) => <blockquote {...props} />,
           br: ({ node, ...props }) => <br {...props} />,
-          code: ({ node, ...props }) => <code {...props} />,
           em: ({ node, ...props }) => <em {...props} />,
           hr: ({ node, ...props }) => <hr {...props} />,
           img: ({ node, ...props }) => <img {...props} />,
@@ -33,6 +34,21 @@ export default function BlogPost({ blog }: BlogProps) {
           pre: ({ node, ...props }) => <pre {...props} />,
           strong: ({ node, ...props }) => <strong {...props} />,
           ul: ({ node, ...props }) => <ul {...props} />,
+          code: ({ node, inline, className, children, style, ...props }) => {
+            const match = /language-(\w+)/.exec(className || "");
+
+            return !inline && match ? (
+              <SyntaxHighlighter
+                style={darcula}
+                language={match[1].toLowerCase() ?? "language-shell"}
+                {...props}
+              >
+                {String(children)}
+              </SyntaxHighlighter>
+            ) : (
+              <code {...props}>{children}</code>
+            );
+          },
         }}
       >
         {blog.content}
