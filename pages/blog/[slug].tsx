@@ -50,6 +50,7 @@ export default function BlogPost({ blog }: BlogProps) {
             em: ({ node, ...props }) => <em {...props} />,
             hr: ({ node, ...props }) => <hr className="my-4" {...props} />,
             img: ({ node, ...props }) => (
+              // eslint-disable-next-line @next/next/no-img-element, jsx-a11y/alt-text
               <img className="w-auto h-auto" {...props} />
             ),
             pre: ({ node, ...props }) => <pre className="" {...props} />,
