@@ -1,10 +1,9 @@
+import Code from "@/components/code";
 import H1 from "@/components/h1";
 import H2 from "@/components/h2";
 import { Blog, listBlogs, readBlogBySlug } from "@/lib/blogs";
 import { GetStaticPaths, GetStaticProps } from "next";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { darcula } from "react-syntax-highlighter/dist/cjs/styles/prism";
 
 // Blog Props
 interface BlogProps {
@@ -34,21 +33,11 @@ export default function BlogPost({ blog }: BlogProps) {
           pre: ({ node, ...props }) => <pre {...props} />,
           strong: ({ node, ...props }) => <strong {...props} />,
           ul: ({ node, ...props }) => <ul {...props} />,
-          code: ({ node, inline, className, children, style, ...props }) => {
-            const match = /language-(\w+)/.exec(className || "");
-
-            return !inline && match ? (
-              <SyntaxHighlighter
-                style={darcula}
-                language={match[1].toLowerCase() ?? "language-shell"}
-                {...props}
-              >
-                {String(children)}
-              </SyntaxHighlighter>
-            ) : (
-              <code {...props}>{children}</code>
-            );
-          },
+          code: ({ node, inline, className, children, style, ...props }) => (
+            <Code inline={inline} className={className} {...props}>
+              {String(children)}
+            </Code>
+          ),
         }}
       >
         {blog.content}
