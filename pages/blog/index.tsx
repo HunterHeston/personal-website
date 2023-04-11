@@ -27,7 +27,7 @@ export default function BlogListing({ blogs }: BlogProps) {
           id="email"
         />
         <button
-          className="p-3 text-primary bg-background rounded-r-md hover:bg-darker"
+          className="transition-all p-3 text-primary bg-background dark:bg-accent dark:text-background rounded-r-md hover:bg-darker hover:text-primary"
           type="submit"
         >
           Subscribe
