@@ -20,7 +20,7 @@ export default function BlogListing({ blogs }: BlogProps) {
           Email
         </label>
         <input
-          className="p-2 w-72 border-l border-t border-b rounded-l-md"
+          className="p-2 w-72 border-l border-t border-b rounded-l-md rounded-r-none"
           placeholder="email"
           required
           type="email"
