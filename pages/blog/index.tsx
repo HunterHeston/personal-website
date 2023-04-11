@@ -44,8 +44,8 @@ export default function BlogListing({ blogs }: BlogProps) {
 
 function BlogLi(blog: Blog) {
   return (
-    <li className="flex flex-col" key={blog.title}>
-      <Link className="text-xl" href={`/blog/${blog.slug}`}>
+    <li className="flex flex-col mb-7" key={blog.title}>
+      <Link className="text-2xl" href={`/blog/${blog.slug}`}>
         {blog.title}
       </Link>
       <p className="text-primaryFaded">
