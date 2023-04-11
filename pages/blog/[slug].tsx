@@ -1,9 +1,11 @@
 import Code from "@/components/code";
 import H1 from "@/components/h1";
 import H2 from "@/components/h2";
+import P from "@/components/p";
 import { Blog, listBlogs, readBlogBySlug } from "@/lib/blogs";
 import { GetStaticPaths, GetStaticProps } from "next";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
+import remarkGfm from "remark-gfm";
 
 // Blog Props
 interface BlogProps {
@@ -14,6 +16,7 @@ export default function BlogPost({ blog }: BlogProps) {
   return (
     <>
       <ReactMarkdown
+        remarkPlugins={[remarkGfm]}
         components={{
           h1: ({ node, ...props }) => <H1 {...props} />,
           h2: ({ node, ...props }) => <H2 {...props} />,
@@ -21,7 +24,7 @@ export default function BlogPost({ blog }: BlogProps) {
           h4: ({ node, ...props }) => <h4 {...props} />,
           h5: ({ node, ...props }) => <h5 {...props} />,
           h6: ({ node, ...props }) => <h6 {...props} />,
-          p: ({ node, ...props }) => <p {...props} />,
+          p: ({ node, ...props }) => <P {...props} />,
           a: ({ node, ...props }) => <a {...props} />,
           blockquote: ({ node, ...props }) => <blockquote {...props} />,
           br: ({ node, ...props }) => <br {...props} />,
@@ -33,7 +36,7 @@ export default function BlogPost({ blog }: BlogProps) {
           pre: ({ node, ...props }) => <pre {...props} />,
           strong: ({ node, ...props }) => <strong {...props} />,
           ul: ({ node, ...props }) => <ul {...props} />,
-          code: ({ node, inline, className, children, style, ...props }) => (
+          code: ({ node, inline, className, children, ...props }) => (
             <Code inline={inline} className={className} {...props}>
               {String(children)}
             </Code>
