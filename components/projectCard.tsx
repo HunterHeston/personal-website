@@ -56,6 +56,7 @@ function LinkButton({ href, children }: LinkButtonProps) {
       <Link
         href={href}
         target="_blank"
+        rel="noopener noreferrer"
         className="flex border  border-primary dark:border-darker rounded-lg mr-4 py-2 px-4 items-center justify-center hover:bg-darker hover:text-white transition duration-300 ease-in-out"
       >
         {children}
