@@ -1,3 +1,4 @@
+import EmailForm from "@/components/emailSubscriberForm";
 import H1 from "@/components/h1";
 import { Blog, listBlogs } from "@/lib/blogs";
 import Link from "next/link";
@@ -12,28 +13,10 @@ export default function BlogListing({ blogs }: BlogProps) {
     <>
       <H1>Blog</H1>
       <p className="mb-5">
-        Sub and you&apos;ll get <span className="font-bold">one</span> email
-        when I publish a new blog post.
+        Subscribe and you&apos;ll get <span className="font-bold">one</span>{" "}
+        email when I publish a new blog post.
       </p>
-      <form className="flex mb-10" action="submit">
-        <label htmlFor="email" hidden>
-          Email
-        </label>
-        <input
-          className="p-2 w-72 border-l border-t border-b rounded-l-md rounded-r-none"
-          placeholder="email"
-          required
-          type="email"
-          name="email"
-          id="email"
-        />
-        <button
-          className="transition-all p-3 text-primary bg-background dark:bg-accent dark:text-background rounded-r-md hover:bg-darker hover:text-primary"
-          type="submit"
-        >
-          Subscribe
-        </button>
-      </form>
+      <EmailForm />
       <ul>
         {blogs.map((blog) => (
           <BlogLi key={blog.title} {...blog} />
