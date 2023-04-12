@@ -23,7 +23,7 @@ export async function subscribeToBlog(
 
     if (response.status !== "subscribed") {
       return {
-        message: "Failed to subscribe. There was an error with mainchimp.",
+        message: "Failed to subscribe. There was an error with mailchimp.",
         status: response.status,
         success: false,
       };
