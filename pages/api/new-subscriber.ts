@@ -24,6 +24,7 @@ export default async function handler(
   // subscribe the user to the list using mailchimp API
   const result: SubscriptionResult = await subscribeToBlog(subscriberEmail);
   if (result.success === false) {
+    console.error("Failed to subscribe user: ", result);
     res.status(result.status as number).json({ error: result.message });
     return;
   }
