@@ -25,7 +25,7 @@ export default async function handler(
   const result: SubscriptionResult = await subscribeToBlog(subscriberEmail);
   if (result.success === false) {
     console.error("Failed to subscribe user: ", result);
-    res.status(result.status as number).json({ error: result.message });
+    res.status(500).json({ error: result.message });
     return;
   }
 
