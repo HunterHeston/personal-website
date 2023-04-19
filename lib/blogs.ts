@@ -97,14 +97,19 @@ function parseBlogContent(path: string, content: string): Blog | Error {
   }
 
   const title = lines[0].replace(/^# /, "").trim();
-  const date = lines[2].replaceAll("`", "").trim();
+  const dateString = lines[2].replaceAll("`", "").trim();
   const readingTime = getReadingTime(content);
+
+  // Make sure the date is parsable
+  if (isNaN(Date.parse(dateString))) {
+    return new Error(`Invalid blog at ${path}: invalid date`);
+  }
 
   return {
     path: path,
     title: title,
     slug: title.toLowerCase().replaceAll(" ", "-"),
-    date: date,
+    date: dateString,
     readingTime: readingTime,
     content: content,
   };

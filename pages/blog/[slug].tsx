@@ -1,13 +1,10 @@
 import Code from "@/components/code";
 import H1 from "@/components/h1";
 import H2 from "@/components/h2";
-import P from "@/components/p";
 import { Blog, listBlogs, readBlogBySlug } from "@/lib/blogs";
 import { GetStaticPaths, GetStaticProps } from "next";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 import remarkGfm from "remark-gfm";
-
-import style from "./slug.module.css";
 
 // Blog Props
 interface BlogProps {
