@@ -37,7 +37,6 @@ export default function Layout({ children }: LayoutProps) {
           {children}
         </main>
       </div>
-      <footer>Hunter Heston @{new Date().getFullYear()}</footer>
     </div>
   );
 }
