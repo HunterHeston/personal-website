@@ -1,7 +1,6 @@
+import { validEmail } from "@/lib/email";
 import { SubscriptionResult, subscribeToBlog } from "@/lib/mailchimp";
 import { NextApiRequest, NextApiResponse } from "next";
-
-const expression: RegExp = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
 
 export default async function handler(
   req: NextApiRequest,
@@ -16,7 +15,7 @@ export default async function handler(
 
   // get the email and validate it
   const subscriberEmail: string = req.body["email"];
-  if (!expression.test(subscriberEmail)) {
+  if (!validEmail(subscriberEmail)) {
     res.status(400).json({ error: "Invalid email address provided" });
     return;
   }
