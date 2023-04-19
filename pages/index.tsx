@@ -2,6 +2,9 @@ import H2 from "@/components/h2";
 import H1 from "@/components/h1";
 import Image from "next/image";
 import P from "@/components/p";
+import GitHubIcon from "@/components/icons/github";
+import TwitterIcon from "@/components/icons/twitter";
+import LinkedInIcon from "@/components/icons/linkedin";
 
 export default function Home() {
   return (
@@ -11,13 +14,44 @@ export default function Home() {
         <h2 className="leading-loose italic">
           Software Engineer. Web Developer. Small Business Owner.
         </h2>
-        <Image
-          className="rounded-full my-5"
-          alt="hunter heston's head shot"
-          src="/hunterheston.jpeg"
-          width={100}
-          height={100}
-        />
+        <div className="flex items-center ">
+          <Image
+            className="rounded-full my-5"
+            alt="hunter heston's head shot"
+            src="/hunterheston.jpeg"
+            width={100}
+            height={100}
+          />
+          <div className="ml-10">
+            <a
+              href="https://github.com/hunterheston"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex transition-all hover:text-gray-400"
+            >
+              <GitHubIcon className="mb-2 mr-2"></GitHubIcon>
+              <p>GitHub</p>
+            </a>
+            <a
+              href="https://twitter.com/hunterheston"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex transition-all hover:text-gray-400"
+            >
+              <TwitterIcon className="mb-1 mr-2 h-6 w-6"></TwitterIcon>
+              <p>Twitter</p>
+            </a>
+            <a
+              href="https://linkedin.com/in/hunterheston"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex transition-all hover:text-gray-400"
+            >
+              <LinkedInIcon className="mr-2"></LinkedInIcon>
+              <p>LinkedIn</p>
+            </a>
+          </div>
+        </div>
       </section>
       {/* <hr /> */}
       <section>
