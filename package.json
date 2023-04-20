@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "@mailchimp/mailchimp_marketing": "^3.0.80",
-    "@mailchimp/mailchimp_transactional": "^1.0.50",
     "@next/font": "13.1.6",
     "@types/mailchimp__mailchimp_marketing": "^3.0.8",
     "@types/node": "18.13.0",
