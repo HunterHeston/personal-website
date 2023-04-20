@@ -1,6 +1,5 @@
 import ContactForm from "@/components/contactForm";
 import H1 from "@/components/h1";
-import H2 from "@/components/h2";
 
 export default function Contact() {
   return (

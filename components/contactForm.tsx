@@ -1,9 +1,32 @@
 import { useState, FormEvent } from "react";
 
+enum ContactStatus {
+  Success,
+  InvalidName,
+  InvalidEmail,
+  InvalidMessage,
+  Error,
+  None,
+}
+
+function getErrorEnum(fieldError: string) {
+  switch (fieldError) {
+    case "name":
+      return ContactStatus.InvalidName;
+    case "email":
+      return ContactStatus.InvalidEmail;
+    case "message":
+      return ContactStatus.InvalidMessage;
+    default:
+      return ContactStatus.Error;
+  }
+}
+
 export default function ContactForm() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [contactState, setContactState] = useState(ContactStatus.None);
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -18,20 +41,22 @@ export default function ContactForm() {
       });
 
       if (res.ok) {
+        setContactState(ContactStatus.Success);
         console.log("contact form sent successfully");
-        // setName("");
-        // setEmail("");
-        // setMessage("");
       } else {
-        console.error("failed to send contact form");
-        // setName("");
-        // setEmail("");
-        // setMessage("");
+        const errorData = await res.json();
+        setContactState(getErrorEnum(errorData.fieldError));
+        console.error("contact form failed to send: ");
       }
     } catch (error) {
-      console.log("Error occurred when submitting the contact form: ", error);
+      console.log(
+        "Unexpected error occurred when submitting the contact form: ",
+        error
+      );
     }
   };
+
+  const inputClasses = "border rounded-md p-4 leading-normal text-xl";
 
   return (
     <>
@@ -42,7 +67,8 @@ export default function ContactForm() {
         >
           Name
           <input
-            className="border rounded-md p-4 leading-normal text-xl"
+            className={inputClasses + getErrorClasses(contactState, "name")}
+            required
             type="text"
             name="name"
             id="name"
@@ -56,7 +82,7 @@ export default function ContactForm() {
         >
           Email
           <input
-            className="border rounded-md p-4 leading-normal text-xl"
+            className={inputClasses + getErrorClasses(contactState, "email")}
             required
             type="email"
             name="email"
@@ -71,8 +97,8 @@ export default function ContactForm() {
         >
           Message
           <textarea
-            className="border rounded-md p-4 leading-normal text-xl"
-            required
+            className={inputClasses + getErrorClasses(contactState, "message")}
+            // required
             name="message"
             id="message"
             value={message}
@@ -88,4 +114,21 @@ export default function ContactForm() {
       </form>
     </>
   );
+}
+
+function getErrorClasses(status: ContactStatus, field: string) {
+  if (status === ContactStatus.None) {
+    return "";
+  }
+
+  switch (field) {
+    case "name":
+      return status === ContactStatus.InvalidName ? " bg-red-100" : "";
+    case "email":
+      return status === ContactStatus.InvalidEmail ? " bg-red-100" : "";
+    case "message":
+      return status === ContactStatus.InvalidMessage ? " bg-red-100" : "";
+    default:
+      return "";
+  }
 }

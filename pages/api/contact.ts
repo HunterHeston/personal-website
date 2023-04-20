@@ -14,22 +14,27 @@ export default async function handler(
   }
 
   const contactName: string = req.body["name"];
+  if (contactName.length === 0) {
+    res.status(400).json({ error: "Name cannot be empty", fieldError: "name" });
+    return;
+  }
 
   // get the email and validate it
   const contactEmail: string = req.body["email"];
   if (!validEmail(contactEmail)) {
-    res.status(400).json({ error: "Invalid email address provided" });
+    res
+      .status(400)
+      .json({ error: "Invalid email address provided", fieldError: "email" });
     return;
   }
 
   const contactMessage: string = req.body["message"];
-  if (contactEmail.length === 0) {
-    res.status(400).json({ error: "Message cannot be empty" });
+  if (contactMessage.length === 0) {
+    res
+      .status(400)
+      .json({ error: "Message cannot be empty", fieldError: "message" });
+    return;
   }
-
-  console.log(`contactName: ${contactName}`);
-  console.log(`contactEmail: ${contactEmail}`);
-  console.log(`contactMessage: ${contactMessage}`);
 
   const addResult = await addContactToDatabase({
     email: contactEmail,
@@ -38,7 +43,6 @@ export default async function handler(
   });
 
   if (addResult.error) {
-    console.error(addResult.error);
     res.status(500).json({ error: "Failed to save contact message" });
     return;
   }
