@@ -98,7 +98,7 @@ export default function ContactForm() {
           Message
           <textarea
             className={inputClasses + getErrorClasses(contactState, "message")}
-            // required
+            required
             name="message"
             id="message"
             value={message}

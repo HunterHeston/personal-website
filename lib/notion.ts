@@ -22,6 +22,9 @@ type UpdateDatabaseResult = {
   message: string;
 };
 
+// This adds a new contact to the database
+// It also adds a comment to the newly created page with a mention to me
+// so that I get a push notification.
 export async function addContactToDatabase(
   contact: Contact
 ): Promise<UpdateDatabaseResult> {
@@ -57,7 +60,29 @@ export async function addContactToDatabase(
         },
       },
     });
-    console.log(response);
+
+    const { id } = response;
+    const commentResponse = await notion.comments.create({
+      parent: {
+        page_id: id,
+      },
+      rich_text: [
+        {
+          text: {
+            content: `${contact.name} just filled out the contact form.`,
+          },
+        },
+        {
+          mention: {
+            user: {
+              // This is my user id in notion
+              // I will receive a push notification whenever someone fills out the contact form
+              id: "1e0a8d19-8171-4f19-8368-d405da084408",
+            },
+          },
+        },
+      ],
+    });
   } catch (error: any) {
     console.error(error);
     return {
