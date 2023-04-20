@@ -11,6 +11,7 @@
   "dependencies": {
     "@mailchimp/mailchimp_marketing": "^3.0.80",
     "@next/font": "13.1.6",
+    "@notionhq/client": "^2.2.4",
     "@types/mailchimp__mailchimp_marketing": "^3.0.8",
     "@types/node": "18.13.0",
     "@types/react": "18.0.28",
