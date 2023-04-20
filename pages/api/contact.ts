@@ -1,4 +1,5 @@
 import { validEmail } from "@/lib/email";
+import { addContactToDatabase } from "@/lib/notion";
 import { NextApiRequest, NextApiResponse } from "next";
 
 export default async function handler(
@@ -29,6 +30,18 @@ export default async function handler(
   console.log(`contactName: ${contactName}`);
   console.log(`contactEmail: ${contactEmail}`);
   console.log(`contactMessage: ${contactMessage}`);
+
+  const addResult = await addContactToDatabase({
+    email: contactEmail,
+    message: contactMessage,
+    name: contactName,
+  });
+
+  if (addResult.error) {
+    console.error(addResult.error);
+    res.status(500).json({ error: "Failed to save contact message" });
+    return;
+  }
 
   res.status(200).json({ message: "successfully sent message" });
 }

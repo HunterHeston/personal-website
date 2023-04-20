@@ -19,14 +19,14 @@ export default function ContactForm() {
 
       if (res.ok) {
         console.log("contact form sent successfully");
-        setName("");
-        setEmail("");
-        setMessage("");
+        // setName("");
+        // setEmail("");
+        // setMessage("");
       } else {
         console.error("failed to send contact form");
-        setName("");
-        setEmail("");
-        setMessage("");
+        // setName("");
+        // setEmail("");
+        // setMessage("");
       }
     } catch (error) {
       console.log("Error occurred when submitting the contact form: ", error);
