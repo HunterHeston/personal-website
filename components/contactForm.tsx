@@ -6,6 +6,7 @@ enum ContactStatus {
   InvalidEmail,
   InvalidMessage,
   Error,
+  IsLoading,
   None,
 }
 
@@ -30,6 +31,7 @@ export default function ContactForm() {
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setContactState(ContactStatus.IsLoading);
 
     try {
       const res = await fetch("/api/contact", {
@@ -43,6 +45,9 @@ export default function ContactForm() {
       if (res.ok) {
         setContactState(ContactStatus.Success);
         console.log("contact form sent successfully");
+        setEmail("");
+        setName("");
+        setMessage("");
       } else {
         const errorData = await res.json();
         setContactState(getErrorEnum(errorData.fieldError));
@@ -56,7 +61,8 @@ export default function ContactForm() {
     }
   };
 
-  const inputClasses = "border rounded-md p-4 leading-normal text-xl";
+  const inputClasses =
+    "border rounded-md p-4 leading-normal text-xl text-background transition-all";
 
   return (
     <>
@@ -68,6 +74,7 @@ export default function ContactForm() {
           Name
           <input
             className={inputClasses + getErrorClasses(contactState, "name")}
+            disabled={contactState == ContactStatus.IsLoading}
             required
             type="text"
             name="name"
@@ -83,6 +90,7 @@ export default function ContactForm() {
           Email
           <input
             className={inputClasses + getErrorClasses(contactState, "email")}
+            disabled={contactState == ContactStatus.IsLoading}
             required
             type="email"
             name="email"
@@ -98,6 +106,7 @@ export default function ContactForm() {
           Message
           <textarea
             className={inputClasses + getErrorClasses(contactState, "message")}
+            disabled={contactState == ContactStatus.IsLoading}
             required
             name="message"
             id="message"
@@ -105,14 +114,32 @@ export default function ContactForm() {
             onChange={(e) => setMessage(e.target.value)}
           />
         </label>
-        <button
-          className="w-full p-4 mt-4 bg-background dark:bg-darker text-primary rounded-md"
-          type="submit"
-        >
-          Send
-        </button>
+        <SubmitButton formStatus={contactState}></SubmitButton>
       </form>
     </>
+  );
+}
+
+// submit button props
+type SubmitButtonProps = {
+  formStatus: ContactStatus;
+};
+
+function SubmitButton({ formStatus }: SubmitButtonProps) {
+  let classNames =
+    "w-full p-4 mt-4 bg-background dark:bg-darker text-primary rounded-md transition-all ";
+  let text = "Send";
+
+  if (formStatus === ContactStatus.Success) {
+    classNames =
+      "w-full p-4 mt-4 bg-background dark:bg-accent text-primary dark:text-darker rounded-md transition-all ";
+    text = "Sent!";
+  }
+
+  return (
+    <button className={classNames} type="submit">
+      {text}
+    </button>
   );
 }
 
