@@ -132,7 +132,7 @@ function SubmitButton({ formStatus }: SubmitButtonProps) {
 
   if (formStatus === ContactStatus.Success) {
     classNames =
-      "w-full p-4 mt-4 bg-background dark:bg-accent text-primary dark:text-darker rounded-md transition-all ";
+      "w-full p-4 mt-4 bg-background bg-accent text-darker rounded-md transition-all ";
     text = "Sent!";
   }
 
