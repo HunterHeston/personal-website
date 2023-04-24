@@ -71,7 +71,9 @@ export default function ContactForm() {
           className="flex flex-col leading-relaxed w-full text-xl mb-3"
           htmlFor="name"
         >
-          Name
+          <span>
+            Name<span className="text-gray-500">*</span>
+          </span>
           <input
             className={inputClasses + getErrorClasses(contactState, "name")}
             disabled={contactState == ContactStatus.IsLoading}
@@ -87,7 +89,9 @@ export default function ContactForm() {
           className="flex flex-col leading-relaxed w-full text-xl mb-3"
           htmlFor="email"
         >
-          Email
+          <span>
+            Email<span className="text-gray-500">*</span>
+          </span>
           <input
             className={inputClasses + getErrorClasses(contactState, "email")}
             disabled={contactState == ContactStatus.IsLoading}
@@ -103,7 +107,9 @@ export default function ContactForm() {
           className="flex flex-col leading-relaxed w-full text-xl mb-3"
           htmlFor="message"
         >
-          Message
+          <span>
+            Message<span className="text-gray-500">*</span>
+          </span>
           <textarea
             className={inputClasses + getErrorClasses(contactState, "message")}
             disabled={contactState == ContactStatus.IsLoading}
