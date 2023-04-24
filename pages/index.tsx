@@ -26,7 +26,7 @@ export default function Home() {
           <div className="ml-10 flex">
             <Link
               href="/contact"
-              className="text-md font-semibold mr-2 border-2 border-black bg-black text-primary rounded-md p-3"
+              className="text-md font-semibold mr-2 border-2 border-black bg-black text-primary dark:text-black dark:bg-white rounded-md p-3"
             >
               GET IN TOUCH!
             </Link>
