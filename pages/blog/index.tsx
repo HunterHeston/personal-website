@@ -29,7 +29,10 @@ export default function BlogListing({ blogs }: BlogProps) {
 function BlogLi(blog: Blog) {
   return (
     <li className="flex flex-col mb-7" key={blog.title}>
-      <Link className="text-2xl" href={`/blog/${blog.slug}`}>
+      <Link
+        className="text-2xl text-accent dark:text-darkAccent"
+        href={`/blog/${blog.slug}`}
+      >
         {blog.title}
       </Link>
       <p className="text-primaryFaded">

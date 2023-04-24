@@ -55,7 +55,7 @@ export default function Home() {
       </section>
       {/* <hr /> */}
       <section>
-        <H2>About Me</H2>
+        <H2 className="text-accent dark:text-darkAccent">About Me</H2>
         <P className="text-xl">
           Hey! I&apos;m <span className="font-bold">Hunter</span>, a software
           engineer and small business owner living in San Francisco.
