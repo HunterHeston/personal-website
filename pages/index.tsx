@@ -34,7 +34,7 @@ export default function Home() {
         </div>
       </section>
       <section>
-        <H2 className="text-3xl mb-3 text-accent dark:text-darkAccent">
+        <H2 className="text-3xl mb-3 text-accent dark:text-darkAccent font-semibold">
           I <span>build websites</span> for <span>small businesses</span>
         </H2>
         <P className="text-xl mt-0 mb-9">
