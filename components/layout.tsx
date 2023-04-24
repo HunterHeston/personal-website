@@ -30,7 +30,7 @@ export default function Layout({ children }: LayoutProps) {
       {/* column container */}
       <div
         id="application"
-        className="flex flex-col sm:flex-row sm:w-2/3 sm:max-w-3xl sm:pt-24 px-4 py-7"
+        className="flex flex-col sm:flex-row sm:w-3/4 sm:max-w-3xl sm:pt-24 px-4 py-7"
       >
         <Navigation />
         <main className="px-3 sm:ml-6 w-full" id="page-content">
