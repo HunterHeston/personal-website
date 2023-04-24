@@ -17,19 +17,25 @@ export default function Navigation() {
           HH
         </Link>
         <ul className="flex sm:flex-col">
-          <NavItem text="home" href="/" active={router.pathname === "/"} />
+          <NavItem text="Home" href="/" active={router.pathname === "/"} />
           <NavItem
-            text="work"
+            text="Work"
             href="/work"
             active={router.pathname === "/work"}
           />
           <NavItem
-            text="blog"
+            text="About"
+            href="/about"
+            active={router.pathname.startsWith("/about")}
+          />
+
+          <NavItem
+            text="Blog"
             href="/blog"
             active={router.pathname.startsWith("/blog")}
           />
           <NavItem
-            text="contact"
+            text="Contact"
             href="/contact"
             active={router.pathname === "/contact"}
           />
