@@ -33,7 +33,7 @@ export default function BlogPost({ blog }: BlogProps) {
               <a
                 target="_blank"
                 rel="noopener noreferrer"
-                className="decoration-accent underline visited:text-accent "
+                className="decoration-accent underline visited:text-accent visited:dark:text-darkAccent "
                 {...props}
               />
             ),
@@ -72,7 +72,10 @@ export default function BlogPost({ blog }: BlogProps) {
             ),
             tbody: ({ node, ...props }) => <tbody {...props} />,
             tr: ({ node, ...props }) => (
-              <tr className="even:text-accent" {...props} />
+              <tr
+                className="even:text-accent even:dark:text-darkAccent"
+                {...props}
+              />
             ),
             th: ({ node, ...props }) => (
               <th className="p-3 text-start" {...props} />

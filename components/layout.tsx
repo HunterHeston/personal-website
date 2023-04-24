@@ -16,7 +16,7 @@ export default function Layout({ children }: LayoutProps) {
         // the `calc` function here prevents the page from shifting when scroll bars appear and disappear
         // https://stackoverflow.com/a/30293718
         [
-          " min-h-screen px-4 py-7 flex flex-col justify-between sm:items-center sm:pl-[calc(100vw-100%)]",
+          " min-h-screen flex flex-col justify-between sm:items-center sm:pl-[calc(100vw-100%)]",
           inter.className,
         ].join(" ")
       }
@@ -30,7 +30,7 @@ export default function Layout({ children }: LayoutProps) {
       {/* column container */}
       <div
         id="application"
-        className="flex flex-col sm:flex-row sm:w-2/3 sm:max-w-3xl sm:pt-24"
+        className="flex flex-col sm:flex-row sm:w-2/3 sm:max-w-3xl sm:pt-24 px-4 py-7"
       >
         <Navigation />
         <main className="px-3 sm:ml-6 w-full" id="page-content">

@@ -34,8 +34,8 @@ export default function Home() {
         </div>
       </section>
       <section>
-        <H2 className="text-accent mb-3">
-          I build websites for small businesses
+        <H2 className="text-3xl mb-3 text-accent dark:text-darkAccent">
+          I <span>build websites</span> for <span>small businesses</span>
         </H2>
         <P className="text-xl mt-0 mb-9">
           I am a freelance web developer. I will build your business a{" "}
@@ -43,58 +43,61 @@ export default function Home() {
           <span className="font-bold">modern website</span>.
         </P>
         <h3 className="text-2xl mb-5">
-          <span className="text-accent font-semibold">Services</span> I provide
+          <span className="text-accent dark:text-darkAccent font-semibold">
+            Services
+          </span>{" "}
+          I provide
         </h3>
         <ul className="w-full flex flex-wrap">
           <li className="mb-10 sm:w-1/2 w-full text-xl">
-            <h4 className="mb-2 font-bold flex items-center">
+            <h4 className="mb-2 font-bold flex items-center text-accent dark:text-darkAccent">
               <CheckIcon className="mr-1" /> Web Development
             </h4>
-            <p>
-              I will build the site you need from start to finish using industry
-              best practices.
+            <p className="sm:mx-2">
+              I will build the site you need from start to finish that helps
+              your business grow.
             </p>
           </li>
           <li className="mb-10 sm:w-1/2 w-full text-xl">
-            <h4 className="mb-2 font-bold flex items-center">
+            <h4 className="mb-2 font-bold flex items-center text-accent dark:text-darkAccent">
               <CheckIcon className="mr-1" /> Mobile First Web Design
             </h4>
-            <p>
-              Over 60% of all traffic comes from mobile devices. Every page of
-              your site will be optimized for mobile experiences.
+            <p className="sm:mx-2">
+              Over 60% of traffic is from mobile devices. I will optimize your
+              site for mobile.
             </p>
           </li>
           <li className="mb-10 sm:w-1/2 w-full text-xl">
-            <h4 className="mb-2 font-bold flex items-center">
+            <h4 className="mb-2 font-bold flex items-center text-accent dark:text-darkAccent">
               <CheckIcon className="mr-1" /> Site Hosting
             </h4>
-            <p>I will manage hosting your website.</p>
+            <p className="sm:mx-2">I will manage hosting your website.</p>
           </li>
           <li className="mb-10 sm:w-1/2 w-full text-xl">
-            <h4 className="mb-2 font-bold flex items-center">
+            <h4 className="mb-2 font-bold flex items-center text-accent dark:text-darkAccent">
               <CheckIcon className="mr-1" /> SEO
             </h4>
-            <p>
+            <p className="sm:mx-2">
               I will make sure your site is blazingly fast and can easily read
               by search engines like Google.
             </p>
           </li>
           <li className="mb-10 sm:w-1/2 w-full text-xl">
-            <h4 className="mb-2 font-bold flex items-center">
+            <h4 className="mb-2 font-bold flex items-center text-accent dark:text-darkAccent">
               <CheckIcon className="mr-1" /> Google Analytics
             </h4>
-            <p>
+            <p className="sm:mx-2">
               I will setup Google Analytics so you can track whats going on on
               your website.
             </p>
           </li>
           <li className="mb-10 sm:w-1/2 w-full text-xl">
-            <h4 className="mb-2 font-bold flex items-center">
+            <h4 className="mb-2 font-bold flex items-center text-accent dark:text-darkAccent">
               <CheckIcon className="mr-1" /> Excellent Customer Service
             </h4>
-            <p>
-              I&apos;m highly responsive eager to collaborate. I want the final
-              product to be your mission success.
+            <p className="sm:mx-2">
+              I&apos;m highly responsive and eager to collaborate. I want the
+              final product to be your mission success.
             </p>
           </li>
         </ul>

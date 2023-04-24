@@ -54,7 +54,7 @@ export default function EmailForm() {
         />
 
         <button
-          className="transition-all p-3 text-primary bg-background dark:bg-accent dark:text-background rounded-r-md hover:bg-darker hover:text-primary"
+          className="transition-all p-3 text-primary bg-background dark:bg-darkAccent dark:text-background rounded-r-md hover:bg-darker hover:text-primary"
           type="submit"
         >
           Subscribe
