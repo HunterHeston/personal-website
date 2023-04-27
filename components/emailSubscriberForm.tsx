@@ -1,4 +1,5 @@
 import { useState, FormEvent } from "react";
+import va from "@vercel/analytics";
 
 enum SubStatus {
   Success,
@@ -23,9 +24,15 @@ export default function EmailForm() {
       });
 
       if (res.ok) {
+        va.track("new-subscriber", {
+          success: true,
+        });
         setEmail("");
         setSubState(SubStatus.Success);
       } else {
+        va.track("new-subscriber", {
+          success: true,
+        });
         setEmail("");
         setSubState(SubStatus.Error);
       }

@@ -1,4 +1,5 @@
 import { useState, FormEvent } from "react";
+import va from "@vercel/analytics";
 
 enum ContactStatus {
   Success,
@@ -43,12 +44,20 @@ export default function ContactForm() {
       });
 
       if (res.ok) {
+        va.track("contact-form-submit", {
+          success: true,
+        });
+
         setContactState(ContactStatus.Success);
         console.log("contact form sent successfully");
         setEmail("");
         setName("");
         setMessage("");
       } else {
+        va.track("contact-form-submit", {
+          success: false,
+        });
+
         const errorData = await res.json();
         setContactState(getErrorEnum(errorData.fieldError));
         console.error("contact form failed to send: ");
