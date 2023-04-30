@@ -69,9 +69,12 @@ export default function Home() {
           </li>
           <li className="mb-10 sm:w-1/2 w-full text-xl">
             <h4 className="mb-2 font-bold flex items-center text-accent dark:text-darkAccent">
-              <CheckIcon className="mr-1" /> Site Hosting
+              <CheckIcon className="mr-1" /> Excellent Customer Service
             </h4>
-            <p className="sm:mx-2">I will manage hosting your website.</p>
+            <p className="sm:mx-2">
+              I&apos;m highly responsive and eager to collaborate. I want the
+              final product to be your mission success.
+            </p>
           </li>
           <li className="mb-10 sm:w-1/2 w-full text-xl">
             <h4 className="mb-2 font-bold flex items-center text-accent dark:text-darkAccent">
@@ -93,12 +96,9 @@ export default function Home() {
           </li>
           <li className="mb-10 sm:w-1/2 w-full text-xl">
             <h4 className="mb-2 font-bold flex items-center text-accent dark:text-darkAccent">
-              <CheckIcon className="mr-1" /> Excellent Customer Service
+              <CheckIcon className="mr-1" /> Site Hosting
             </h4>
-            <p className="sm:mx-2">
-              I&apos;m highly responsive and eager to collaborate. I want the
-              final product to be your mission success.
-            </p>
+            <p className="sm:mx-2">I will manage hosting your website.</p>
           </li>
         </ul>
       </section>
