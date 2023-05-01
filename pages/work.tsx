@@ -6,7 +6,9 @@ export default function Contact() {
   return (
     <>
       <H1>Work</H1>
-      <P>An overview of some of the projects I&apos;ve worked on.</P>
+      <P>This is a work in progress. Check back soon. </P>
+
+      {/* <P>An overview of some of the projects I&apos;ve worked on.</P>
       <div className="sm:flex flex-wrap">
         <ProjectCard
           title="Bean Bag Cafe"
@@ -26,7 +28,7 @@ export default function Contact() {
           projectLink="https://benchmarkclimbing.com"
           codeLink="https://github.com/hunterheston"
         />
-      </div>
+      </div> */}
     </>
   );
 }

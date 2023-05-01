@@ -5,16 +5,15 @@ import P from "@/components/p";
 import GitHubIcon from "@/components/icons/github";
 import TwitterIcon from "@/components/icons/twitter";
 import LinkedInIcon from "@/components/icons/linkedin";
-import CheckIcon from "@/components/icons/check";
-import Link from "next/link";
-import ArrowUpRightIcon from "@/components/icons/arrowUpRight";
 
 export default function Home() {
   return (
     <>
-      <section className="mb-4">
+      <section className="text-xl">
         <H1>Hunter Heston</H1>
-        <h2 className="leading-loose italic">Freelance Web Developer.</h2>
+        <h2 className="leading-loose italic">
+          Software Engineer and Web Developer.
+        </h2>
         <div className="flex items-center ">
           <Image
             className="rounded-full my-5"
@@ -23,84 +22,61 @@ export default function Home() {
             width={100}
             height={100}
           />
-          <div className="ml-10 flex">
-            <Link
-              href="/contact"
-              className="text-md font-semibold mr-2 border-2 border-black bg-black text-primary dark:text-black dark:bg-white rounded-md p-3"
+          <div className="ml-10">
+            <a
+              href="https://github.com/hunterheston"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex transition-all hover:text-gray-400"
             >
-              GET IN TOUCH!
-            </Link>
+              <GitHubIcon className="mb-2 mr-2"></GitHubIcon>
+              <p>GitHub</p>
+            </a>
+            <a
+              href="https://twitter.com/hunterheston"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex transition-all hover:text-gray-400"
+            >
+              <TwitterIcon className="mb-1 mr-2 h-6 w-6"></TwitterIcon>
+              <p>Twitter</p>
+            </a>
+            <a
+              href="https://linkedin.com/in/hunterheston"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex transition-all hover:text-gray-400"
+            >
+              <LinkedInIcon className="mr-2"></LinkedInIcon>
+              <p>LinkedIn</p>
+            </a>
           </div>
         </div>
       </section>
+      {/* <hr /> */}
       <section>
-        <H2 className="text-3xl mb-3 text-accent dark:text-darkAccent font-semibold">
-          I <span>build websites</span> for <span>small businesses</span>
-        </H2>
-        <P className="text-xl mt-0 mb-9">
-          I am a freelance web developer. I will build your business a{" "}
-          <span className="font-bold">fast</span> and{" "}
-          <span className="font-bold">modern website</span>.
+        <H2 className="text-accent dark:text-darkAccent">About Me</H2>
+        <P className="text-xl">
+          Hey! I&apos;m <span className="font-bold">Hunter</span>, a software
+          engineer and small business owner living in San Francisco.
         </P>
-        <h3 className="text-2xl mb-5">
-          <span className="text-accent dark:text-darkAccent font-semibold">
-            Services
-          </span>{" "}
-          I provide
-        </h3>
-        <ul className="w-full flex flex-wrap">
-          <li className="mb-10 sm:w-1/2 w-full text-xl">
-            <h4 className="mb-2 font-bold flex items-center text-accent dark:text-darkAccent">
-              <CheckIcon className="mr-1" /> Web Development
-            </h4>
-            <p className="sm:mx-2">
-              I will build the site you need from start to finish that helps
-              your business grow.
-            </p>
-          </li>
-          <li className="mb-10 sm:w-1/2 w-full text-xl">
-            <h4 className="mb-2 font-bold flex items-center text-accent dark:text-darkAccent">
-              <CheckIcon className="mr-1" /> Mobile First Web Design
-            </h4>
-            <p className="sm:mx-2">
-              Over 60% of traffic is from mobile devices. I will optimize your
-              site for mobile.
-            </p>
-          </li>
-          <li className="mb-10 sm:w-1/2 w-full text-xl">
-            <h4 className="mb-2 font-bold flex items-center text-accent dark:text-darkAccent">
-              <CheckIcon className="mr-1" /> Excellent Customer Service
-            </h4>
-            <p className="sm:mx-2">
-              I&apos;m highly responsive and eager to collaborate. I want the
-              final product to be your mission success.
-            </p>
-          </li>
-          <li className="mb-10 sm:w-1/2 w-full text-xl">
-            <h4 className="mb-2 font-bold flex items-center text-accent dark:text-darkAccent">
-              <CheckIcon className="mr-1" /> SEO
-            </h4>
-            <p className="sm:mx-2">
-              I will make sure your site is blazingly fast and can easily read
-              by search engines like Google.
-            </p>
-          </li>
-          <li className="mb-10 sm:w-1/2 w-full text-xl">
-            <h4 className="mb-2 font-bold flex items-center text-accent dark:text-darkAccent">
-              <CheckIcon className="mr-1" /> Google Analytics
-            </h4>
-            <p className="sm:mx-2">
-              I will setup Google Analytics so you can track whats going on on
-              your website.
-            </p>
-          </li>
-          <li className="mb-10 sm:w-1/2 w-full text-xl">
-            <h4 className="mb-2 font-bold flex items-center text-accent dark:text-darkAccent">
-              <CheckIcon className="mr-1" /> Site Hosting
-            </h4>
-            <p className="sm:mx-2">I will manage hosting your website.</p>
-          </li>
-        </ul>
+        <P className="text-xl">
+          For the past 6 years I&apos;ve been building software at companies
+          like <span className="font-bold">Google</span> and{" "}
+          <span className="font-bold">Lockheed Martin</span>.
+        </P>
+        <P className="text-xl">
+          My strengths are{" "}
+          <span className="font-bold">backend service development</span> in{" "}
+          <span className="font-bold">Go</span> and{" "}
+          <span className="font-bold">NodeJS</span>. I&apos;m also skilled at
+          building <span className="font-bold">frontends</span> with{" "}
+          <span className="font-bold">ReactJS</span> or vanilla{" "}
+          <span className="font-bold">HTML/CSS/JavaScript</span>.
+        </P>
+        <P className="text-xl">
+          I am passionate about coding, writing and personal growth.
+        </P>
       </section>
     </>
   );
