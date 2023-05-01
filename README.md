@@ -10,7 +10,22 @@ This is my personal website. Built using NextJS.
 
 This dir contains the raw markdown for blog content.
 
-Could eventually be moved to some external store.
-But including the markdown here will cause the server to rebuild every push.
-Reading the blogs from a static directory at build time will generate static server side rendered HTML for each post.
-This is fast and gets most of the value for least effort.
+### Lib
+
+Just helper functions for the site.
+
+### Pages
+
+NextJS pages dir.
+
+### Public
+
+Static assets dir.
+
+### Styles
+
+Just for tailwind.
+
+### Components
+
+Reusable components.
