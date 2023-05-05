@@ -6,29 +6,28 @@ export default function Contact() {
   return (
     <>
       <H1>Work</H1>
-      <P>This is a work in progress. Check back soon. </P>
 
-      {/* <P>An overview of some of the projects I&apos;ve worked on.</P>
+      <P>An overview of some of the projects I&apos;ve worked on.</P>
       <div className="sm:flex flex-wrap">
         <ProjectCard
-          title="Bean Bag Cafe"
-          image="/600x400.jpeg"
-          projectLink="https://beanbag.cafe"
-          codeLink="https://github.com/hunterheston"
+          title="Hawken Pet Care"
+          image="/work/hawken-pet-care.png"
+          projectLink="https://dog-walking.vercel.app/"
+          codeLink="https://github.com/HunterHeston/dog-walking"
         />
         <ProjectCard
-          title="Fools Errand"
-          image="/600x400.jpeg"
-          projectLink="https://foolserrandsf.com"
-          codeLink="https://github.com/hunterheston"
+          title="HawkenVO"
+          image="/work/hawken-vo.png"
+          projectLink="https://hawkenvo.vercel.app/"
+          codeLink="https://github.com/HunterHeston/hawkenvo"
         />
         <ProjectCard
-          title="Benchmark Climbing Gym"
-          image="/600x400.jpeg"
+          title="Personalized Dog Bandanas"
+          image="/work/pdb.png"
           projectLink="https://benchmarkclimbing.com"
-          codeLink="https://github.com/hunterheston"
+          codeLink=""
         />
-      </div> */}
+      </div>
     </>
   );
 }

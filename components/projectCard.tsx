@@ -34,10 +34,14 @@ export default function ProjectCard({
             <WebIcon className="mr-2" />
             View
           </LinkButton>
-          <LinkButton href={codeLink}>
-            <GitHubIcon className="mr-2" />
-            Code
-          </LinkButton>
+          {codeLink === "" ? (
+            <></>
+          ) : (
+            <LinkButton href={codeLink}>
+              <GitHubIcon className="mr-2" />
+              Code
+            </LinkButton>
+          )}
         </div>
       </div>
     </>
