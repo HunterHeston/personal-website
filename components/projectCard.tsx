@@ -10,6 +10,7 @@ interface ProjectCardProps {
   image: string;
   projectLink: string;
   codeLink: string;
+  description: string;
 }
 
 export default function ProjectCard({
@@ -17,6 +18,7 @@ export default function ProjectCard({
   image,
   projectLink,
   codeLink,
+  description,
 }: ProjectCardProps) {
   return (
     <>
@@ -28,8 +30,9 @@ export default function ProjectCard({
           width={600}
           height={400}
         />
-        <h2 className="text-2xl py-5">{title}</h2>
-        <div className="flex">
+        <h2 className="text-2xl pt-4 pb-1">{title}</h2>
+        <p className="pb-4">{description}</p>
+        <div className="flex pb-8">
           <LinkButton href={projectLink}>
             <WebIcon className="mr-2" />
             View
