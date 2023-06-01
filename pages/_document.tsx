@@ -7,7 +7,7 @@ export default function Document() {
         <script
           defer
           data-domain="hunterheston.com"
-          src="https://plausible.io/js/script.js"
+          src="https://plausible.io/js/script.outbound-links.js"
         ></script>
       </Head>
       <body className="dark:bg-background dark:text-primary selection:bg-accent selection:text-background">
